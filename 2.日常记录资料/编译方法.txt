@@ -1,0 +1,27 @@
+1 编译环境系统安装
+   安装一个ubuntu虚拟机系统，最好是ubuntu18及以上。一定要注意，磁盘空间分配最好等于200G，以免后续磁盘空间不够不好扩容。Ubuntu安装教程网上有很多，此处不再冗述，可参考如下连接：
+https://blog.csdn.net/weixin_43521890/article/details/88111911
+2 编译
+2.1 整体过程
+    1）首先第一步是下载拉取代码的脚本，因为分支比较多，sdk也比较多，所以都是通过脚本来配置下载。
+    2）下载完脚本后，根据脚本中的./getCompile.sh –h的提示，下载对应的分支代码和sdk。
+    3）下载完代码后，再在build中进行source环境变量，编译代码。
+4）将编译好的代码，放到系统上测试。
+2.1 目录搭建：
+此步骤下载的是具体的拉去代码和工具链的脚本以及相关的配置文件，以下svn路径是最新的脚本路径，此路径由史建航维护更新，如果不确定，切记一定要及时咨询史建航，确认路径正确性，旧的不更新的路径会导致后续的所有编译都错误。
+svn co 
+https://devsvn.in.reachauto.com/svn/SDC-EOS-aCore/02.Develop/02.SoftwareDevelopment/04.PlatformSourceCode/01.Trunk/newCompileModel 
+cd newCompileModel/
+svn下载完脚本和配置后，看以下里面主要的脚本和相关参数，以防下载错误：
+getCompile.sh:主要下载代码的脚本，./getCompile.sh –h查看对应的参数说明和提示。
+projectConfig.ini: projectConfig.ini等系列文件，里面存放着对应的代码和sdk所在是svn路径，由-f参数指定，在确认要下载的代码和sdk之前，请认真核对代码和sdk的svn路径。
+-p：指定下载的sdk的系统，切记，不要再使用x86_linux了，请选择x86_64_linux，x86_linux已经不再维护了，否则会导致一系列的错误和问题。
+可以执行如下命令，下载代码。
+./getCompile.sh -f projectConfig.ini.trunk1911 -p x86_64_linux -t compile -o x86_linux_1911_trunk
+2.2 编译：
+
+1）cd x86_linux_1911_trunk/build/
+2）./config -p x86_64_linux
+3）source toolchain/environment.config
+4）cd product/access/
+5）make clean; make all
