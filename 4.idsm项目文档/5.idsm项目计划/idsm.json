@@ -1,0 +1,645 @@
+{
+    "SECURITY-EVENT-DEFINITION": {
+        "childNode": {}, 
+        "description": "This meta-class defines a security-related event as part of the intrusion detection system.", 
+        "maxOccurs": "-1", 
+        "minOccurs": "0", 
+        "parameters": {
+			"SHORT-NAME": {
+				"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+				"longName": "Short Name", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			},
+			"ID": {
+                "UI_isShown":"true",
+                "dataType": "POSITIVE-INTEGER", 
+                "defaultValue": "", 
+                "description": "This attribute represents the numerical identification of the defined security event. The identification shall be unique within the scope of the IDS.", 
+                "longName": "id", 
+                "valueMax": "4294967295", 
+                "valueMin": "0"
+			},
+			"T": {
+				"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "", 
+				"longName": "timestamp", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			},
+			"EVENT-SYMBOL-NAME": {
+			"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "This aggregation defines optionally an alternative Event Name for the SecurityEventDefinition in case there is a collision of shortNames", 
+				"longName": "SymbolProps", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			}
+        }, 
+        "shortName": "SecurityEventDefinition",
+		"type": "SECURITY-EVENT-DEFINITION",
+		"UI_manuallyCreate" : "true",
+		"specialRestriction": "Can use New-Child operation.", 
+        "restrictionReason": ""
+    },
+	 "SECURITY-EVENT-FILTER-CHAIN": {
+        "childNode": {}, 
+        "description": "This meta-class represents a configurable chain of filters used to qualify security events.", 
+        "maxOccurs": "-1", 
+        "minOccurs": "0", 
+        "parameters": {
+			"SHORT-NAME": {
+				"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+				"longName": "Short Name", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			}
+		},
+		"childNode": {
+			"AGGREGATION": {
+				"description": "This meta-class represents the ability to define a Grant for a ServiceInterface.field", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"MINIMUM-INTERVAL-LENGTH": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute represents the configuration of the minimum time window in seconds for the aggregation filter.", 
+						"longName": "minimum Interval Length", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					},
+					"CONTEXT-DATA-SOURCE": {
+						"DEST": {
+							"dataType": "ENUM", 
+							"enumeration": [
+								{
+									"USE-FIRST-CONTEXT-DATA": {}
+								},
+								{
+									"USE-LAST-CONTEXT-DATA": {}
+								}
+							], 
+							"maxOccurs": "1", 
+							"minOccurs": "0"
+						},
+						"dataType": "REF", 
+						"description": "CONTEXT-DATA-SOURCE", 
+						"longName": "contextData Source", 
+						"maxLength": "256", 
+						"minLength": "0", 
+						"pattern": "", 
+						"valueMax": "",
+						"valueMin": ""
+					}
+				},
+				"shortName": "SecurityEventAggregationFilter",
+				"type": "AGGREGATION"
+			},
+			"ONE-EVERY-N": {
+				"description": "This meta-class represents the configuration of a sampling filter for security events", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"N": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute represents the configuration of the minimum time window in seconds for the aggregation filter.", 
+						"longName": "n", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					}
+				},
+				"shortName": "SecurityEventOneEveryNFilter",
+				"type": "ONE-EVERY-N"
+			},
+			"STATE": {
+				"description": "This meta-class represents the configuration of a state filter for security events", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					}
+				},
+				"childNode": {
+					"BLOCK-IF-STATE-ACTIVE-AP-IREFS": {
+						"description": "", 
+						"maxOccurs": "-1", 
+						"minOccurs": "0", 
+						"parameters": {
+								"SHORT-NAME": {
+									"dataType": "STRING", 
+									"defaultValue": "", 
+									"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+									"longName": "Short Name", 
+									"maxLength": "128", 
+									"minLength": "0", 
+									"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+									"valueMax": "",
+									"valueMin": ""
+								},
+								"CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF": {
+									"DEST": {
+										"dataType": "ENUM", 
+										"enumeration": [
+										{
+											"MODE-DECLARATION-GROUP-PROTOTYPEE": {}
+										}
+										], 
+										"maxOccurs": "1", 
+										"minOccurs": "0"
+									},
+									"dataType": "REF", 
+									"description": "CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF", 
+									"longName": "Context Mode Declaration Group Prototype", 
+									"maxLength": "128", 
+									"minLength": "0", 
+									"pattern": "", 
+									"valueMax": "", 
+									"valueMin": ""
+								},
+								"TARGET-MODE-DECLARATION-REF": {
+									"DEST": {
+										"dataType": "ENUM", 
+										"enumeration": [
+										{
+											"MODE-DECLARATION": {}
+										}
+										], 
+										"maxOccurs": "1", 
+										"minOccurs": "0"
+									},
+									"UI_isShown":"true",
+									"dataType": "REF", 
+									"description": "TARGET-MODE-DECLARATION-REF", 
+									"longName": "Target Mode Declaration", 
+									"maxLength": "128", 
+									"minLength": "0", 
+									"pattern": "", 
+									"valueMax": "", 
+									"valueMin": ""
+								}
+						},
+						"shortName": "SecurityEventStateFilter",
+						"type": "BLOCK-IF-STATE-ACTIVE-AP-IREFS"						
+					}
+				},
+				"shortName": "SecurityEventStateFilter",
+				"type": "STATE"
+			},
+			"THRESHOLD": {
+				"description": "This meta-class represents the threshold filter that drops (repeatedly at each beginning of a configurable time interval) a configurable number of security events", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"INTERVAL-LENGTH": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute configures the time interval in seconds for one threshold filter operation.", 
+						"longName": "interval Length", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					},
+					"THRESHOLD-NUMBER": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute configures the threshold number, i.e. how many security events in the configured time frame are dropped before subsequent events start to pass the filter.", 
+						"longName": "threshold Number", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					}
+				},
+				"shortName": "SecurityEventThresholdFilter",
+				"type": "THRESHOLD"
+			}
+		},
+        "shortName": "SecurityEventFilterChain",
+		"type": "SECURITY-EVENT-FILTER-CHAIN",
+		"UI_manuallyCreate" : "true",
+		"specialRestriction": "Can use New-Child operation.", 
+        "restrictionReason": ""
+    },
+	"IDSM-PROPERTIES": {
+        "description": "This meta-class provides the ability to aggregate filters for security events.", 
+        "maxOccurs": "-1", 
+        "minOccurs": "0", 
+        "parameters": {
+			"SHORT-NAME": {
+				"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+				"longName": "Short Name", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			}
+        }, 
+		"childNode": {
+			"IDSM-RATE-LIMITATION": {
+				"description": "", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"MAX-EVENTS-IN-INTERVAL": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute configures the threshold for dropping security events if the number of all processed security events exceeds the threshold in the respective time interval.", 
+						"longName": "maxEventsInInterval", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					},
+					"TIME-INTERVAL": {
+						"UI_isShown":"true",
+						"dataType": "FLOAT", 
+						"defaultValue": "", 
+						"description": "This attribute configures the length of the time interval in seconds for dropping security events if the number of all processed security events exceeds the configurable threshold within the respective time interval.", 
+						"longName": "timeInterval", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					}
+				},
+				"shortName": "IdsmRateLimitation",
+				"type": "IDSM-RATE-LIMITATION"
+			},
+			"IDSM-TRAFFIC-LIMITATION": {
+				"description": "", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"MAX-BYTES-IN-INTERVAL": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute configures the threshold for dropping security events if the size of all processed security events exceeds the threshold in the respective time interval.", 
+						"longName": "maxBytesInInterval", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					},
+					"TIME-INTERVAL": {
+						"UI_isShown":"true",
+						"dataType": "FLOAT", 
+						"defaultValue": "", 
+						"description": "This attribute configures the length of the time interval in seconds for dropping security events if the size of all processed security events exceeds the configurable threshold within the respective time interval.", 
+						"longName": "timeInterval", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					}
+				},
+				"shortName": "IdsmTrafficLimitation",
+				"type": "IDSM-TRAFFIC-LIMITATION"
+			}
+		},
+        "shortName": "IdsmProperties",
+		"type": "IDSM-PROPERTIES",
+		"UI_manuallyCreate" : "true",
+		"specialRestriction": "Can use New-Child operation.", 
+        "restrictionReason": ""
+    },
+	"SECURITY-EVENT-CONTEXT-MAPPING-BSW-MODULE": {
+        "description": "This meta-class represents the ability to associate a collection of security events with an IdsM instance and with the executional context of a BSW module in which this IdsM instance can receive reports for these security events.", 
+        "maxOccurs": "-1", 
+        "minOccurs": "0", 
+        "parameters": {
+			"SHORT-NAME": {
+				"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+				"longName": "Short Name", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			},
+			"AFFECTED-BSW-MODULE": {
+				"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "This meta-class represents the ability to associate a collection of security events with an IdsM instance and with the executional context of a BSW module in which this IdsM instance can receive reports for these security events.", 
+				"longName": "affectedBsw Module", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			}
+        }, 
+		"childNode": {
+			"FILTER-CHAINS":{
+				"description": "", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"SECURITY-EVENT-FILTER-CHAIN-REF":{
+						"DEST": {
+							"dataType": "ENUM", 
+							"enumeration": [
+								{
+									"SECURITY-EVENT-FILTER-CHAIN": {}
+								}
+							], 
+							"maxOccurs": "1", 
+							"minOccurs": "0"
+						},
+						"UI_isShown":"true",
+						"dataType": "REF", 
+						"defaultValue": "/NeuSAR/SecurityEventFilterChain", 
+						"description": "", 
+						"longName": "SecurityEventFilterChain", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "", 
+						"valueMax": "", 
+						"valueMin": ""
+					}
+				},
+				"shortName": "SecurityEventFilterChainRefConditional",
+				"type": "SECURITY-EVENTS"
+			},
+			"IDSM-INSTANCES":{
+				"description": "", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"IDSM-INSTANCE-REF": {
+						"DEST": {
+							"dataType": "ENUM", 
+							"enumeration": [
+								{
+									"IDSM-INSTANCE": {}
+								}
+							], 
+							"maxOccurs": "1", 
+							"minOccurs": "0"
+						},
+						"UI_isShown":"true",
+						"dataType": "REF", 
+						"defaultValue": "/NeuSAR/IdsmInstance", 
+						"description": "", 
+						"longName": "IdsmInstance", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "", 
+						"valueMax": "", 
+						"valueMin": ""
+					}
+				},
+				"shortName": "IdsmInstanceRefConditional",
+				"type": "IDSM-INSTANCES"
+			},
+			"SECURITY-EVENT-CONTEXT-PROPS": {
+				"description": "This meta-class specifies the SecurityEventDefinition to be mapped to an IdsmInstance and adds mapping-dependent properties of this security event valid only for this specific mapping", 
+				"maxOccurs": "1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"DEFAULT-REPORTING-MODE":{
+						"DEST": {
+							"dataType": "ENUM", 
+							"enumeration": [
+								{
+									"DETAILED-BYPASSING-FILTERS": {}
+								}
+							], 
+							"maxOccurs": "1", 
+							"minOccurs": "0"
+						},
+						"dataType": "REF", 
+						"defaultValue": "", 
+						"description": "This attribute defines the default reporting mode for the referenced security event.", 
+						"longName": "Default Reporting Mode", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "", 
+						"valueMax": "", 
+						"valueMin": ""
+					},
+					"PERSISTENT-STORAGE": {
+						"dataType": "BOOLEAN", 
+						"defaultValue": "NULL", 
+						"description": "This attribute controls whether qualified reportings of the referenced security event shall be stored persistently by the mapped IdsmInstance or not", 
+						"longName": "persistentStorage", 
+						"valueMax": "", 
+						"valueMin": ""
+                    },
+					"SENSOR-INSTANCE-ID": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute defines the ID of the security sensor that detects the referenced security event.", 
+						"longName": "sensorInstanceId", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					},
+					"SEVERITY": {
+						"UI_isShown":"true",
+						"dataType": "POSITIVE-INTEGER", 
+						"defaultValue": "", 
+						"description": "This attribute defines how critical/severe the referenced security event is.", 
+						"longName": "severity", 
+						"valueMax": "4294967295", 
+						"valueMin": "0"
+					}
+				},
+				"childNode": {
+					"CONTEXT-DATAS":{
+						"description": "", 
+						"maxOccurs": "-1", 
+						"minOccurs": "0", 
+						"parameters": {
+							"SHORT-NAME": {
+								"dataType": "STRING", 
+								"defaultValue": "", 
+								"description": "", 
+								"longName": "Short Name", 
+								"maxLength": "128", 
+								"minLength": "0", 
+								"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+								"valueMax": "",
+								"valueMin": ""
+							},
+							"SECURITY-EVENT-CONTEXT-DATA":{
+								"UI_isShown":"true",
+								"dataType": "POSITIVE-INTEGER", 
+								"defaultValue": "", 
+								"description": "", 
+								"longName": "timestamp", 
+								"valueMax": "4294967295", 
+								"valueMin": "0"
+							}
+						}, 
+						"shortName": "SecurityEventContextData",
+						"type": "CONTEXT-DATAS"
+					},
+					"SECURITY-EVENTS":{
+						"description": "", 
+						"maxOccurs": "-1", 
+						"minOccurs": "0", 
+						"parameters": {
+							"SHORT-NAME": {
+								"dataType": "STRING", 
+								"defaultValue": "", 
+								"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+								"longName": "Short Name", 
+								"maxLength": "128", 
+								"minLength": "0", 
+								"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+								"valueMax": "",
+								"valueMin": ""
+							},
+							"SECURITY-EVENT-DEFINITION-REF":{
+								"DEST": {
+									"dataType": "ENUM", 
+									"enumeration": [
+										{
+											"SECURITY-EVENT-DEFINITION": {}
+										}
+									], 
+									"maxOccurs": "-1", 
+									"minOccurs": "0"
+								},
+								"dataType": "REF", 
+								"defaultValue": "/NeuSAR/SecurityEventDefinition", 
+								"description": "", 
+								"longName": "SecurityEventDefinitionRefConditional", 
+								"maxLength": "128", 
+								"minLength": "0", 
+								"pattern": "", 
+								"valueMax": "", 
+								"valueMin": ""
+							}
+						}, 
+						"shortName": "SecurityEventDefinitionRefConditional",
+						"type": "SECURITY-EVENTS"
+					}
+				},
+				"shortName": "SecurityEventContextProps",
+				"type": "SECURITY-EVENT-CONTEXT-PROPS"
+			}
+		},
+        "shortName": "SecurityEventContextMappingBswModule",
+		"type": "SECURITY-EVENT-CONTEXT-MAPPING-BSW-MODULE",
+		"UI_manuallyCreate" : "true",
+		"specialRestriction": "Can use New-Child operation.", 
+        "restrictionReason": ""
+    }
+}
