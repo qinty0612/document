@@ -1,0 +1,1274 @@
+[
+	{	
+		"shortName"		:"GeneralConfiguration",
+		"description"	:"General Configuration.",
+		"parameters"	:{},
+		"configDefFile"	:"general.json",
+		"arxmlFileName" :"generalOneElement.arxml",
+		"childNode"		:[
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define requirements on a Machine in the context of designing a system.",
+				"parameters": {},
+				"shortName": "MachineDesign",
+				"subTagName": "MACHINE-DESIGN",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "Machine that represents an Adaptive Autosar Software Stack.",
+				"parameters": {},
+				"shortName": "Machine",
+				"subTagName": "MACHINE",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "Ethernet-specific cluster attributes.",
+				"parameters": {},
+				"shortName": "EthernetCluster",
+				"subTagName": "ETHERNET-CLUSTER",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "@RESTRICT_TO_STANDARD:CP!\nThe top level element of the System Description.\nThe System description defines five major elements: Topology, Software, Communication, Mapping and Mapping Constraints.\n\nThe System element directly aggregates the elements describing the Software, Mapping and Mapping Constraints; it contains a reference to an ASAM FIBEX description specifying Communication and Topology.\n@END_RESTRICT_TO_STANDARD!\n\n@RESTRICT_TO_STANDARD:AP!\nThe top level element of the System Description. \n@END_RESTRICT_TO_STANDARD!",
+				"parameters": {},
+				"shortName": "System",
+				"subTagName": "SYSTEM",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to support the formal modeling of application software on the AUTOSAR adaptive platform. Consequently, it shall only be used on the AUTOSAR adaptive platform.",
+				"parameters": {},
+				"shortName": "AdaptiveApplicationSwComponentType",
+				"subTagName": "ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents an executable program.",
+				"parameters": {},
+				"shortName": "Executable",
+				"subTagName": "EXECUTABLE",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class provides information required to execute the referenced executable.",
+				"parameters": {},
+				"shortName": "ProcessDesign",
+				"subTagName": "PROCESS-DESIGN",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class provides information required to execute the referenced executable.",
+				"parameters": {},
+				"shortName": "Process",
+				"subTagName": "PROCESS",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the way to specify a data type definition that is taken as the basis for a C++ language binding to a C++ Standard Library feature.",
+				"parameters": {},
+				"shortName": "StdCppImplementationDataType",
+				"subTagName": "STD-CPP-IMPLEMENTATION-DATA-TYPE",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to express the relationship between a physical value and the mathematical representation. \n\nNote that this is still independent of the technical implementation in data types. It only specifies the formula how the internal value corresponds to its physical pendant.",
+				"parameters": {},
+				"shortName": "CompuMethod",
+				"subTagName": "COMPU-METHOD",
+				"tagName": ""
+			}
+		]
+	},
+	{
+		"shortName"	:"ExecutionManagement",
+		"description"	:"Execution Management.",
+		"parameters"	:{},
+		"configDefFile"	:"emconfigDef.json",
+		"arxmlFileName" :"em.arxml",
+		"childNode"		:[
+			{
+				"shortName"  	:"ProcessToMachineMappingSet",
+				"tagName"   	 :"",
+				"description"	:"This meta-class acts as a bucket for collecting ProcessToMachineMappings.",
+				"subTagName"	:"PROCESS-TO-MACHINE-MAPPING-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"StartupConfigSet",
+				"tagName"		:"",
+				"description"	:"Collection of reusable startup configurations for processes.",
+				"subTagName"	:"STARTUP-CONFIG-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			}
+		]
+	},
+	{
+		"shortName"		:"StateManagement",
+		"description"	:"State Management.",
+		"parameters"	:{},
+		"configDefFile"	:"smconfigDef.json",
+		"arxmlFileName" :"sm.arxml",
+		"childNode"		:[
+			{
+				"childNode": [],
+				"description": "A collection of Mode Declarations. Also, the initial mode is explicitly identified.",
+				"parameters": {},
+				"shortName": "ModeDeclarationGroup",
+				"subTagName": "MODE-DECLARATION-GROUP",
+				"tagName": ""
+			}
+		]
+	},
+	{
+		"shortName"		:"CommunicationManagement",
+		"description"	:"Communication Management.",
+		"parameters"	:{},
+		"configDefFile"	:"cmconfigDef.json",
+		"arxmlFileName" :"cm.arxml",
+		"childNode"		:[
+			{
+				"shortName"		:"ServiceInterface",
+				"tagName"			:"",
+				"description"	:"This represents the ability to define a PortInterface that consists of a heterogeneous collection of methods, events and fields.",
+				"subTagName"	:"SERVICE-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"SomeipServiceInterfaceDeployment",
+				"tagName"			:"",
+				"description"	:"SOME/IP configuration settings for a ServiceInterface.",
+				"subTagName"	:"SOMEIP-SERVICE-INTERFACE-DEPLOYMENT",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"UserDefinedServiceInterfaceDeployment",
+				"tagName"		:"",
+				"description"	:"UserDefined configuration settings for a ServiceInterface.",
+				"subTagName"	:"USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"DdsServiceInterfaceDeployment",
+				"tagName"		:"",
+				"description"	:"DDS configuration settings for a ServiceInterface.",
+				"subTagName"	:"DDS-SERVICE-INTERFACE-DEPLOYMENT",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"		:"ProvidedSomeipServiceInstance",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to describe the existence and configuration of a provided service instance in a concrete implementation on top of SOME/IP.",
+				"subTagName"	:"PROVIDED-SOMEIP-SERVICE-INSTANCE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"RequiredSomeipServiceInstance",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to describe the existence and configuration of a required service instance in a concrete implementation on top of SOME/IP.",
+				"subTagName"	:"REQUIRED-SOMEIP-SERVICE-INSTANCE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"ProvidedUserDefinedServiceInstance",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to describe the existence and configuration of a provided service instance in a concrete implementation that is not standardized by AUTOSAR.",
+				"subTagName"	:"PROVIDED-USER-DEFINED-SERVICE-INSTANCE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"RequiredUserDefinedServiceInstance",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to describe the existence and configuration of a required service instance in a concrete implementation that is not standardized by AUTOSAR.",
+				"subTagName"	:"REQUIRED-USER-DEFINED-SERVICE-INSTANCE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"DdsProvidedServiceInstance",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to describe the existence and configuration of a provided service instance in a concrete implementation on top of DDS.",
+				"subTagName"	:"DDS-PROVIDED-SERVICE-INSTANCE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"DdsRequiredServiceInstance",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to describe the existence and configuration of a required service instance in a concrete implementation on top of DDS.",
+				"subTagName"	:"DDS-REQUIRED-SERVICE-INSTANCE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"SomeipSdServerServiceInstanceConfig",
+				"tagName"			:"",
+				"description"	:"Server specific settings that are relevant for the configuration of SOME/IP Service-Discovery.",
+				"subTagName"	:"SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"		:"SomeipServiceInstanceToMachineMapping",
+				"tagName"			:"",
+				"description"	:"This meta-class allows to map SomeipServiceInstances to a CommunicationConnector of a Machine. In this step the network configuration (IP Address, Transport Protocol, Port Number) for the ServiceInstance is defined.",
+				"subTagName"	:"SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"ServiceInstanceToPortPrototypeMapping",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to assign a transport layer dependent ServiceInstance to a PortPrototype. \n\nWith this mapping it is possible to define how specific PortPrototypes are represented in the middleware in terms of service configuration.",
+				"subTagName"	:"SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"DdsServiceInstanceToMachineMapping",
+				"tagName"			:"",
+				"description"	:"This meta-class allows to map DdsServiceInstances to a CommunicationConnector of a Machine.",
+				"subTagName"	:"DDS-SERVICE-INSTANCE-TO-MACHINE-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"TlvDataIdDefinitionSet",
+				"tagName"			:"",
+				"description"	:"This meta-class acts as a container of TlvDataIdDefinitions to be used in a given context.",
+				"subTagName"	:"TLV-DATA-ID-DEFINITION-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"TransformationPropsSet",
+				"tagName"			:"",
+				"description"	:"Collection of TransformationProps.",
+				"subTagName"	:"TRANSFORMATION-PROPS-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"TransformationPropsToServiceInterfaceElementMappingSet",
+				"tagName"			:"",
+				"description"	:"Collection of TransformationPropsToServiceInterfaceElementMappings.",
+				"subTagName"	:"TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"SecureComPropsSet",
+				"tagName"		:"",
+				"description"	:"This meta-class represents the ability to aggregate a collection of SecureComProps.",
+				"subTagName"	:"SECURE-COM-PROPS-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"E2EProfileConfigurationSet",
+				"tagName"			:"",
+				"description"	:"This meta-class represents the ability to aggregate a collection of E2EProfileConfigurations.",
+				"subTagName"	:"E-2-E-PROFILE-CONFIGURATION-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to formally specify the semantics of an application error on the AUTOSAR adaptive platform.",
+				"parameters": {},
+				"shortName": "ApApplicationError",
+				"subTagName": "AP-APPLICATION-ERROR",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class acts as a reference target that represents an entire collection of APApplicationErrors. This takes the burden from ClientServerOperations that reference a larger number of ApApplicationErrors.",
+				"parameters": {},
+				"shortName": "ApApplicationErrorSet",
+				"subTagName": "AP-APPLICATION-ERROR-SET",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define a global error domain for an ApApplicationError.",
+				"parameters": {},
+				"shortName": "ApApplicationErrorDomain",
+				"subTagName": "AP-APPLICATION-ERROR-DOMAIN",
+				"tagName": ""
+ 			}
+		]
+	},
+	{
+		"shortName": "Persistency", 
+		"configDefFile": "perconfigDef.json", 
+		"description": "Persistency.", 
+		"arxmlFileName" :"per.arxml",
+		"parameters": {}, 
+		"childNode": [
+			{
+				"subTagName": "PERSISTENCY-FILE-ARRAY", 
+				"description": "This meta-class comes with the ability to define an array of single files that creates the deployment-side counterpart to a PortPrototype typed by a PersistencyFileProxyInterface.", 
+				"parameters": {}, 
+				"tagName": "", 
+				"shortName": "File Array", 
+				"childNode": []
+			}, 
+			{
+				"subTagName": "PERSISTENCY-PORT-PROTOTYPE-TO-FILE-ARRAY-MAPPING", 
+				"description": "This meta-class represents the ability to define a mapping between an array of files on deployment level to a given PortPrototype.", 
+				"parameters": {}, 
+				"tagName": "", 
+				"shortName": "Port Prototype To File Array Mapping", 
+				"childNode": []
+			},
+			{
+				"subTagName": "PERSISTENCY-KEY-VALUE-DATABASE", 
+				"description": "This meta-class represents the ability to model a key/value data base on deployment level.", 
+				"parameters": {}, 
+				"tagName": "", 
+				"shortName": "Key Value Database", 
+				"childNode": []
+			},
+			{
+				"subTagName": "PERSISTENCY-PORT-PROTOTYPE-TO-KEY-VALUE-DATABASE-MAPPING", 
+				"description": "This meta-class represents the ability to define a mapping between a PortPrototype and a key value database used in a persistent storage.", 
+				"parameters": {}, 
+				"tagName": "", 
+				"shortName": "Port Prototype To Key Value Database Mapping", 
+				"childNode": []
+			}
+		]
+	},
+	{
+		"shortName"	:"SignalToService",
+		"description"	:"SignalToService.",
+		"parameters"	:{},
+		"configDefFile"	:"stsconfigDef.json",
+		"arxmlFileName" :"sts.arxml",
+		"childNode"		:[
+			{
+				"shortName"  	:"I-Signals",
+				"tagName"   	 :"",
+				"description"	:"Signal of the Interaction Layer.", 
+				"subTagName"	:"I-SIGNAL",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"ISignalGroup",
+				"tagName"   	 :"",
+				"description"	:"SignalGroup of the Interaction Layer.", 
+				"subTagName"	:"I-SIGNAL-GROUP",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"ISignalIPdu",
+				"tagName"   	 :"",
+				"description"	:"Represents the IPdus handled by Com.", 
+				"subTagName"	:"I-SIGNAL-I-PDU",
+				"parameters"	:{},
+				"childNode"		:[]
+			},		
+			{
+				"shortName"  	:"Can-Cluster",
+				"tagName"   	 :"",
+				"description"	:"Can-Cluster", 
+				"subTagName"	:"CAN-CLUSTER",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"ServiceInstanceToSignalMappingSet",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents a list of mappings of ServiceInstances to ISignalTriggerings.", 
+				"subTagName"	:"SERVICE-INSTANCE-TO-SIGNAL-MAPPING-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			}		
+		]	
+	},
+	{
+		"shortName"		:"PlatformHealthManagement",
+		"description"	:"Platform Health Management.",
+		"parameters"	:{},
+		"configDefFile"	:"phmconfigDef.json",
+		"arxmlFileName" :"phm.arxml",
+		"childNode"		:[
+			{
+				"shortName"  	:"HealthChannelInterfaces",
+				"tagName"		:"",
+				"description"	:"phm HealthChannelInterfaces.",
+				"subTagName"	:"PHM-HEALTH-CHANNEL-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"SupervisedEntityInterfaces",
+				"tagName"   	 :"",
+				"description"	:"phm SupervisedEntityInterfaces.",
+				"subTagName"	:"PHM-SUPERVISED-ENTITY-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"PhmRecoveryActionInterface",
+				"tagName"   	 :"",
+				"description"	:"phm PhmRecoveryActionInterface.",
+				"subTagName"	:"PHM-RECOVERY-ACTION-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"		:"Contributions",
+				"tagName"		:"",
+				"description"	:"phm Contributions.",
+				"subTagName"	:"PLATFORM-HEALTH-MANAGEMENT-CONTRIBUTION",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"PhmContributionToMachineMapping",
+				"tagName"		:"",
+				"description"	:"PhmContributionToMachineMapping.",
+				"subTagName"	:"PHM-CONTRIBUTION-TO-MACHINE-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"RecoveryViaApplicationActionToClientServerOperationMapping",
+				"tagName"		:"",
+				"description"	:"RecoveryViaApplicationActionToClientServerOperationMapping.",
+				"subTagName"	:"RECOVERY-VIA-APPLICATION-ACTION-TO-CLIENT-SERVER-OPERATION-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			}
+		]
+	},
+	{
+		"shortName"  	:"DiagnosticCommunicationManagement",
+		"description"	:"Diagnostic Communication Management.",
+		"parameters"	:{},
+		"configDefFile"	:"dcmconfigDef.json",
+		"arxmlFileName" :"dcm.arxml",
+		"childNode"  	:[	
+			{
+				"shortName"  	:"DiagnosticAccessPermission",
+				"tagName"   	:"",
+				"description"	:"This represents the specification of whether a given service can be accessed according to the existence of meta-classes referenced by a particular DiagnosticAccessPermission.\n\nIn other words, this meta-class acts as a mapping element between several (otherwise unrelated) pieces of information that are put into context for the purpose of checking for access rights.",
+				"subTagName"	:"DIAGNOSTIC-ACCESS-PERMISSION",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},							
+			{
+				"shortName"  	:"DiagnosticDataIdentifier",
+				"tagName"   	:"",
+				"description"   :"This meta-class represents the ability to model a diagnostic data identifier (DID) that is fully specified regarding the payload at configuration-time.", 
+				"subTagName"	:"DIAGNOSTIC-DATA-IDENTIFIER",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},		
+			{
+				"shortName"  	:"DiagnosticDataIdentifierGenericInterface",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to implement a DID-focused PortInterface for diagnostics on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-DATA-IDENTIFIER-GENERIC-INTERFACE",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},		
+			{
+				"shortName"  	:"DiagnosticECUResetClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Ecu Reset\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-ECU-RESET-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticGenericUdsPortMapping",
+				"tagName"   	:"",
+				"description"	:"Defines to which SWC service ports with DiagnosticsGenericUdsNeeds a collection of DiagnosticServiceInstances is mapped.", 
+				"subTagName"	:"DIAGNOSTIC-GENERIC-UDS-PORT-MAPPING",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticReadDataByIdentifier",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the Read Data by Identifier diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-READ-DATA-BY-IDENTIFIER",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},	
+			{
+				"shortName"  	:"DiagnosticReadDataByIdentifierClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Read Data by Identifier\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-READ-DATA-BY-IDENTIFIER-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticReadDTCInformation",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the \"Read DTC Information\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-READ-DTC-INFORMATION",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticReadDtcInformationClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"ReadDTCInformation\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-READ-DTC-INFORMATION-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticRoutine",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to define a diagnostic routine.", 
+				"subTagName"	:"DIAGNOSTIC-ROUTINE",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},	
+			{
+				"shortName"  	:"DiagnosticRoutineControl",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the Routine Control diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-ROUTINE-CONTROL",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},	
+			{
+				"shortName"  	:"DiagnosticRoutineControlClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Routine Control\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-ROUTINE-CONTROL-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticRoutineGenericInterface",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to implement a routine-focused PortInterface for diagnostics on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-ROUTINE-GENERIC-INTERFACE",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticSecurityAccess",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the \"Security Access\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-SECURITY-ACCESS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticSecurityAccessClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Security Access\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-SECURITY-ACCESS-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticSecurityLevel",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to define a security level considered for diagnostic purposes.", 
+				"subTagName"	:"DIAGNOSTIC-SECURITY-LEVEL",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},	
+			{
+				"shortName"  	:"DiagnosticSecurityLevelInterface",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to implement a security-level-focused PortInterface for diagnostics on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-SECURITY-LEVEL-INTERFACE",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},	
+			{
+				"shortName"  	:"DiagnosticSecurityLevelPortMapping",
+				"tagName"   	:"",
+				"description"	:"Defines to which SWC service ports with DiagnosticsCommunicationSecurityNeeds the DiagnosticSecurityLevel is mapped.", 
+				"subTagName"	:"DIAGNOSTIC-SECURITY-LEVEL-PORT-MAPPING",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},		
+			{
+				"shortName"  	:"DiagnosticSession",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to define a diagnostic session.", 
+				"subTagName"	:"DIAGNOSTIC-SESSION",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticSessionControl",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the Session Control diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-SESSION-CONTROL",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticSessionControlClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Session Control\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-SESSION-CONTROL-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticWriteDataByIdentifier",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the Write Data by Identifier diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-WRITE-DATA-BY-IDENTIFIER",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticWriteDataByIdentifierClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Write Data by Identifier\" diagnostic service.", 
+				"subTagName"	:"DIAGNOSTIC-WRITE-DATA-BY-IDENTIFIER-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticDownloadInterface",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to implement a PortInterface to process requests for downloading data using diagnostic channels on the adaptive platform.",
+				"subTagName"    :"DIAGNOSTIC-DOWNLOAD-INTERFACE",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticRequestDownload",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the \"Request Download\" diagnostic service.",
+				"subTagName"    :"DIAGNOSTIC-REQUEST-DOWNLOAD",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticRequestDownloadClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Request Download\" diagnostic service.",
+				"subTagName"	:"DIAGNOSTIC-REQUEST-DOWNLOAD-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticUploadInterface",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to implement a PortInterface to process requests for uploading data using diagnostic channels on the adaptive platform.",
+				"subTagName"	:"DIAGNOSTIC-UPLOAD-INTERFACE",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticRequestUpload",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the \"Request Upload\" diagnostic service.",
+				"subTagName"	:"DIAGNOSTIC-REQUEST-UPLOAD",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticRequestUploadClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Request Upload\" diagnostic service.",
+				"subTagName"	:"DIAGNOSTIC-REQUEST-UPLOAD-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticRequestFileTransfer",
+				"tagName"   	:"",
+				"description"	:"This diagnostic service instance implements the UDS service 0x38.",
+				"subTagName"	:"DIAGNOSTIC-REQUEST-FILE-TRANSFER",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticRequestFileTransferClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Request File transfer\" diagnostic service.",
+				"subTagName"	:"DIAGNOSTIC-REQUEST-FILE-TRANSFER-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticMemoryIdentifier",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to define memory properties from the diagnostics point of view.",
+				"subTagName"	:"DIAGNOSTIC-MEMORY-IDENTIFIER",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticManagerStatusNotify",
+				"nonstandard"	:"true",
+				"tagName"   	:"",
+				"description"	:"This meta-class represents the ability to config notify function",
+				"subTagName"	:"DIAGNOSTIC-MANAGER-STATUSNOTIFY",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticComControl",
+				"tagName"   	:"",
+				"description"	:"This represents an instance of the \"Communication Control\" diagnostic service.",
+				"subTagName"    :"DIAGNOSTIC-COM-CONTROL",
+				"parameters"	:{},
+				"childNode"  	:[]
+			},
+			{
+				"shortName"  	:"DiagnosticComControlClass",
+				"tagName"   	:"",
+				"description"	:"This meta-class contains attributes shared by all instances of the \"Communication Control\" diagnostic service.",
+				"subTagName"    :"DIAGNOSTIC-COM-CONTROL-CLASS",
+				"parameters"	:{},
+				"childNode"  	:[]
+			}
+		]
+	},
+	{
+		"shortName"	:"DiagnosticEventManagement",
+		"description"	:"DiagnosticEventManagement.",
+		"parameters"	:{},
+		"configDefFile"	:"demconfigDef.json",
+		"arxmlFileName" :"dem.arxml",
+		"childNode"		:[
+			{
+				"shortName"  	:"DiagnosticContributionSet",
+				"tagName"		:"",
+				"description"	:"This meta-class represents a root node of a diagnostic extract. It bundles a given set of diagnostic model elements. The granularity of the DiagonsticContributionSet is arbitrary in order to support the aspect of decentralized configuration, i.e. different contributors can come up with an own DiagnosticContributionSet.",
+				"subTagName"	:"DIAGNOSTIC-CONTRIBUTION-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"DiagnosticAging",
+				"tagName"   	 :"",
+				"description"	:"Defines the aging algorithm.",
+				"subTagName"	:"DIAGNOSTIC-AGING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},								
+			{
+				"shortName"  	:"DiagnosticDtcInformationInterface",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to implement a PortInterface to access the properties of DTCs  on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-DTC-INFORMATION-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"DiagnosticConditionInterface",
+				"tagName"   	 :"",
+				"description": "This meta-class represents the ability to implement a PortInterface to process requests for diagnostic conditions on the adaptive platform.",
+				"subTagName"	:"DIAGNOSTIC-CONDITION-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},	
+			{
+				"shortName"  	:"DiagnosticDataElementInterface",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to implement a element-of-DID-focused PortInterface for diagnostics on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-DATA-ELEMENT-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"DiagnosticEnableCondition",
+				"tagName"   	 :"",
+				"description"	:"Specification of an enable condition.", 
+				"subTagName"	:"DIAGNOSTIC-ENABLE-CONDITION",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticEnableConditionGroup",
+				"tagName"   	 :"",
+				"description"	:"Enable condition group which includes one or several enable conditions.", 
+				"subTagName"	:"DIAGNOSTIC-ENABLE-CONDITION-GROUP",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticEnableConditionPortMapping",
+				"tagName"   	 :"",
+				"description"	:"Defines to which SWC service ports with DiagnosticEnableConditionNeeds the DiagnosticEnableCondition is mapped.", 
+				"subTagName"	:"DIAGNOSTIC-ENABLE-CONDITION-PORT-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticEvent",
+				"tagName"   	 :"",
+				"description"	:"This element is used to configure DiagnosticEvents.", 
+				"subTagName"	:"DIAGNOSTIC-EVENT",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticEventInterface",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to implement a PortInterface to access the properties of diagnostic events  on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-EVENT-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"  	:"DiagnosticEventPortMapping",
+				"tagName"   	 :"",
+				"description"	:"Defines to which SWC service ports with DiagnosticEventNeeds the DiagnosticEvent is mapped.", 
+				"subTagName"	:"DIAGNOSTIC-EVENT-PORT-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"  	:"DiagnosticEventToDebounceAlgorithmMapping",
+				"tagName"   	 :"",
+				"description"	:"Defines which Debounce Algorithm is applicable for a DiagnosticEvent.", 
+				"subTagName"	:"DIAGNOSTIC-EVENT-TO-DEBOUNCE-ALGORITHM-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticEventToEnableConditionGroupMapping",
+				"tagName"   	 :"",
+				"description"	:"Defines which EnableConditionGroup is applicable for a DiagnosticEvent.", 
+				"subTagName"	:"DIAGNOSTIC-EVENT-TO-ENABLE-CONDITION-GROUP-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"  	:"DiagnosticEventToOperationCycleMapping",
+				"tagName"   	 :"",
+				"description"	:"Defines which OperationCycle is applicable for a DiagnosticEvent.", 
+				"subTagName"	:"DIAGNOSTIC-EVENT-TO-OPERATION-CYCLE-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},						
+			{
+				"shortName"  	:"DiagnosticEventToTroubleCodeUdsMapping",
+				"tagName"   	 :"",
+				"description"	:"Defines which UDS Diagnostic Trouble Code is applicable for a DiagnosticEvent.", 
+				"subTagName"	:"DIAGNOSTIC-EVENT-TO-TROUBLE-CODE-UDS-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"DiagnosticExtendedDataRecord",
+				"tagName"   	 :"",
+				"description"	:"This element describes an extended data record.", 
+				"subTagName"	:"DIAGNOSTIC-EXTENDED-DATA-RECORD",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"DiagnosticDataIdentifierSet",
+				"tagName"   	:"",
+				"description"	:"This represents the ability to define a list of DiagnosticDataIdentifiers that can be reused in different contexts.", 
+				"subTagName"	:"DIAGNOSTIC-DATA-IDENTIFIER-SET",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticFreezeFrame",
+				"tagName"   	 :"",
+				"description"	:"This element describes combinations of DIDs for a non OBD relevant freeze frame.", 
+				"subTagName"	:"DIAGNOSTIC-FREEZE-FRAME",
+				"parameters"	:{},
+				"childNode"		:[]
+			},												
+			{
+				"shortName"  	:"DiagnosticMonitorInterface",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to implement a monitor-focused PortInterface for diagnostics on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-MONITOR-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"  	:"DiagnosticOperationCycle",
+				"tagName"   	 :"",
+				"description"	:"Definition of an operation cycle that is the base of the event qualifying and for Dem scheduling.", 
+				"subTagName"	:"DIAGNOSTIC-OPERATION-CYCLE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"  	:"DiagnosticOperationCycleInterface",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to implement a PortInterface to process requests for operation cycles on the adaptive platform.", 
+				"subTagName"	:"DIAGNOSTIC-OPERATION-CYCLE-INTERFACE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},			
+			{
+				"shortName"  	:"DiagnosticOperationCyclePortMapping",
+				"tagName"   	 :"",
+				"description"	:"Defines to which SWC service ports with DiagnosticOperationCycleNeeds the DiagnosticOperationCycle is mapped.", 
+				"subTagName"	:"DIAGNOSTIC-OPERATION-CYCLE-PORT-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},											
+			{
+				"shortName"  	:"DiagnosticProvidedDataMapping",
+				"tagName"   	 :"",
+				"description"	:"This represents the ability to define the nature of a data access for a DiagnosticDataElement based on a data provider that cannot be modeled explicitly.", 
+				"subTagName"	:"DIAGNOSTIC-PROVIDED-DATA-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"DiagnosticServiceSwMapping",
+				"tagName"   	 :"",
+				"description"	:"This represents the ability to define a mapping of a diagnostic service to a software-component or a basic-software module.", 
+				"subTagName"	:"DIAGNOSTIC-SERVICE-SW-MAPPING",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"DiagnosticTroubleCodeGroup",
+				"tagName"   	 :"",
+				"description"	:"The diagnostic trouble code group defines the DTCs belonging together and thereby forming a group.", 
+				"subTagName"	:"DIAGNOSTIC-TROUBLE-CODE-GROUP",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"  	:"DiagnosticTroubleCodeProps",
+				"tagName"   	 :"",
+				"description"	:"This element defines common Dtc properties that can be reused by different non OBD-relevant DTCs.", 
+				"subTagName"	:"DIAGNOSTIC-TROUBLE-CODE-PROPS",
+				"parameters"	:{},
+				"childNode"		:[]
+			},				
+			{
+				"shortName"  	:"DiagnosticTroubleCodeUds",
+				"tagName"   	 :"",
+				"description"	:"This element is used to describe non OBD-relevant DTCs.", 
+				"subTagName"	:"DIAGNOSTIC-TROUBLE-CODE-UDS",
+				"parameters"	:{},
+				"childNode"		:[]
+			}									
+		]
+	},
+	{
+		"shortName": "TimeSynchronization",
+		"description": "Time Synchronization.",
+		"parameters": {},
+		"configDefFile": "tsconfigDef.json",
+		"arxmlFileName" :"ts.arxml",
+		"childNode": [
+			{
+				"shortName": "GlobalTimeDomain",
+				"tagName": "",
+				"description": "This represents the ability to define a global time domain.",
+				"subTagName": "GLOBAL-TIME-DOMAIN",
+				"parameters": {},
+				"childNode": []
+			},
+			{
+				"shortName": "TimeSynchroniaztionMasterInterface",
+				"description": "This meta-class provides the ability to define a PortInterface for the interaction with a Time Synchronization Master.",
+				"tagName": "",
+				"subTagName": "TIME-SYNCHRONIZATION-MASTER-INTERFACE",
+				"parameters": {},
+				"childNode": []
+			},
+			{
+				"shortName": "TimeSynchroniaztionPureLocalInterface",
+				"tagName": "",
+				"description": "This meta-class provides the ability to define a PortInterface for the interaction with a Time Synchronization Pule Local Time Base.",
+				"subTagName": "TIME-SYNCHRONIZATION-PURE-LOCAL-INTERFACE",
+				"parameters": {},
+				"childNode": []
+			},
+			{
+				"shortName": "TimeSynchroniaztionSlaveInterface",
+				"tagName": "",
+				"description": "This meta-class provides the ability to define a PortInterface for the interaction with a Time Synchronization Slave.",
+				"subTagName": "TIME-SYNCHRONIZATION-SLAVE-INTERFACE",
+				"parameters": {},
+				"childNode": []
+			},
+			{
+				"shortName": "TimeSyncPortPrototypeToTimeBaseMapping",
+				"tagName": "",
+				"description": "This meta-class provides the ability to map a RPortPrototype typed by a TimeSynchronizationInterface to a TimeBaseResource in the context of a Process.",
+				"subTagName": "TIME-SYNC-PORT-PROTOTYPE-TO-TIME-BASE-MAPPING",
+				"parameters": {},
+				"childNode": []
+			}
+		]
+	},
+	{
+		"shortName"		:"NetworkManagement",
+		"description"	:"Network Management.",
+		"parameters"	:{},
+		"configDefFile"	:"nmconfigDef.json",
+		"arxmlFileName" :"nm.arxml",
+		"childNode"		:[
+			{
+				"shortName"		:"NmConfig",
+				"tagName"		:"",
+				"description"	:"Contains the all configuration elements for AUTOSAR Nm..",
+				"subTagName"	:"NM-CONFIG",
+				"parameters"	:{},
+				"childNode"		:[]
+			}
+		]
+	},
+	{
+		"shortName"	:"UpdateAndConfigManagement",
+		"description"	:"Update And Config Management.",
+		"parameters"	:{},
+		"configDefFile"	:"ucm.json",
+		"arxmlFileName" :"ucm.arxml",
+		"childNode"		:[
+			{
+				"shortName"  	:"SoftwareCluster",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to define an uploadable software-package, i.e. the SoftwareCluster shall contain all software and configuration for a given purpose.", 
+				"subTagName"	:"SOFTWARE-CLUSTER",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"SoftwarePackage",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to formalize the content of a software package.", 
+				"subTagName"	:"SOFTWARE-PACKAGE",
+				"parameters"	:{},
+				"childNode"		:[]
+			},
+			{
+				"shortName"  	:"VehiclePackage",
+				"tagName"   	 :"",
+				"description"	:"This meta-class represents the ability to define a vehicle package for executing an update campaign.",
+				"subTagName"	:"VEHICLE-PACKAGE",
+				"parameters"	:{},
+				"childNode"		:[]
+			}
+		]	
+	},
+	{
+		"shortName"		:"Cryptography",
+		"description"	:"Cryptography.",
+		"parameters"	:{},
+		"configDefFile"	:"cryptoConfigDef.json",
+		"arxmlFileName" :"crypto.arxml",
+		"childNode"		:[
+			{
+				"shortName": "CryptoServicePrimitive",
+				"tagName": "",
+				"description": "This meta-class has the ability to represent a crypto primitive.",
+				"subTagName": "CRYPTO-SERVICE-PRIMITIVE",
+				"parameters": {},
+				"childNode": []
+			},
+			{
+				"shortName": "CryptoServiceKey",
+				"tagName": "",
+				"description": "This meta-class has the ability to represent a crypto key.",
+				"subTagName": "CRYPTO-SERVICE-KEY",
+				"parameters": {},
+				"childNode": []
+			},
+			{
+				"shortName": "CryptoServiceCertificate",
+				"tagName": "",
+				"description": "This meta-class represents the ability to model a cryptographic certificate.",
+				"subTagName": "CRYPTO-SERVICE-CERTIFICATE",
+				"parameters": {},
+				"childNode": []
+			}
+		]
+	},
+	{
+		"shortName"		:"IdentityAndAccessManagement",
+		"description"	:"Identity And Access Management.",
+		"parameters"	:{},
+		"configDefFile"	:"iam.json",
+		"arxmlFileName" :"identity_access_management.xml",
+		"childNode"		:[
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to grant access to a ServiceInterface.event.",
+				"parameters": {},
+				"shortName": "ComEventGrant",
+				"subTagName": "COM-EVENT-GRANT",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to grant access to a ServiceInterface.field.",
+				"parameters": {},
+				"shortName": "ComFieldGrant",
+				"subTagName": "COM-FIELD-GRANT",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to grant access to a ServiceInterface.method.",
+				"parameters": {},
+				"shortName": "ComMethodGrant",
+				"subTagName": "COM-METHOD-GRANT",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define a Grant for a ServiceInterface.event",
+				"parameters": {},
+				"shortName": "ComEventGrantDesign",
+				"subTagName": "COM-EVENT-GRANT-DESIGN",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to grant access to a ServiceInterface.field.",
+				"parameters": {},
+				"shortName": "ComFieldGrantDesign",
+				"subTagName": "COM-FIELD-GRANT-DESIGN",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define a Grant for a ServiceInterface.method.",
+				"parameters": {},
+				"shortName": "ComMethodGrantDesign",
+				"subTagName": "COM-METHOD-GRANT-DESIGN",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define a Grant for offering a service.",
+				"parameters": {},
+				"shortName": "ComOfferServiceGrant",
+				"subTagName": "COM-OFFER-SERVICE-GRANT",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define a Grant for offering a service.",
+				"parameters": {},
+				"shortName": "ComOfferServiceGrantDesign",
+				"subTagName": "COM-OFFER-SERVICE-GRANT-DESIGN",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define a Grant for finding a service.",
+				"parameters": {},
+				"shortName": "ComFindServiceGrant",
+				"subTagName": "COM-FIND-SERVICE-GRANT",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to define a Grant for finding a service.",
+				"parameters": {},
+				"shortName": "ComFindServiceGrantDesign",
+				"subTagName": "COM-FIND-SERVICE-GRANT-DESIGN",
+				"tagName": ""
+			}
+		]
+	},
+	{
+		"shortName"		:"IntrusionDetectionSystemDesign",
+		"description"	:"Intrusion Detection System Design.",
+		"parameters"	:{},
+		"configDefFile"	:"idsm.json",
+		"arxmlFileName" :"intrusion_detection_system_design.xml",
+		"childNode"		:[
+			{
+				"childNode": [],
+				"description": "This meta-class provides the ability to create a relation between an EcuInstance and a specific class of filters for security events that apply for all security events reported on the referenced EcuInstance.",
+				"parameters": {},
+				"shortName": "IdsmInstance",
+				"subTagName": "IDSM-INSTANCE",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class provides the ability to aggregate filters for security events.",
+				"parameters": {},
+				"shortName": "IdsmProperties",
+				"subTagName": "IDSM-PROPERTIES",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to associate a collection of security events with an IdsM instanceand with the executional context of an application.",
+				"parameters": {},
+				"shortName": "SecurityEventContextMappingApplication",
+				"subTagName": "SECURITY-EVENT-CONTEXT-MAPPING-APPLICATION",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to associate a collection of security events with an IdsM instance and with the executional context of a BSW module in which this IdsM instance can receive reports for these security events.",
+				"parameters": {},
+				"shortName": "SecurityEventContextMappingBswModule",
+				"subTagName": "SECURITY-EVENT-CONTEXT-MAPPING-BSW-MODULE",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to associate a collection of security events with an IdsM instance and with the executional context related to a CommunicationConnector in which this IdsM instance can receive reports for these security events.",
+				"parameters": {},
+				"shortName": "SecurityEventContextMappingCommConnector",
+				"subTagName": "SECURITY-EVENT-CONTEXT-MAPPING-COMM-CONNECTOR",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class represents the ability to associate a collection of security events with an IdsM instance and with the executional context of a functional cluster in which this IdsM instance can receive reports for these security events.",
+				"parameters": {},
+				"shortName": "SecurityEventContextMappingFunctionalCluster",
+				"subTagName": "SECURITY-EVENT-CONTEXT-MAPPING-FUNCTIONAL-CLUSTER",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class defines a security-related event as part of the intrusion detection system.",
+				"parameters": {},
+				"shortName": "SecurityEventDefinition",
+				"subTagName": "SECURITY-EVENT-DEFINITION",
+				"tagName": ""
+			},
+			{
+				"childNode": [],
+				"description": "This meta-class defines a security-related event as part of the intrusion detection system.",
+				"parameters": {},
+				"shortName": "SecurityEventFilterChain",
+				"subTagName": "SECURITY-EVENT-FILTER-CHAIN",
+				"tagName": ""
+			}
+		]
+	}
+]	
