@@ -1464,6 +1464,47 @@
 				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
 				"valueMax": "",
 				"valueMin": ""
+			},
+			"IDSM-INSTANCE-ID": {
+					"UI_isShown":"true",
+					"dataType": "POSITIVE-INTEGER", 
+					"defaultValue": "", 
+					"description": "This attribute is used to provide a source identification in the context of reporting security events.", 
+					"longName": "Idsm Instance Id", 
+					"valueMax": "1023", 
+					"valueMin": "0"
+				},
+			"TIMESTAMP-FORMAT": {
+				"dataType": "STRING", 
+				"defaultValue": "", 
+				"description": "The existence of this attribute specifies that the IdsM shall add a timestamp to the QSEv messages it sends onto the network.", 
+				"longName": "Short Name", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+				"valueMax": "",
+				"valueMin": ""
+			},
+			"IDSM-MODULE-INSTANTIATION-REF": {
+				"DEST": {
+					"dataType": "ENUM", 
+					"enumeration": [
+						{
+							"IDSM-MODULE-INSTANTIATION": {}
+						}
+					], 
+					"maxOccurs": "-1", 
+					"minOccurs": "0"
+				},
+				"dataType": "REF", 
+				"defaultValue": "", 
+				"description": "This reference identifies the meta-class that defines the attributes for the IdsM configuration on a specific machine", 
+				"longName": "Idsm Module Instantiation", 
+				"maxLength": "128", 
+				"minLength": "0", 
+				"pattern": "", 
+				"valueMax": "", 
+				"valueMin": ""
 			}
 		},
 		"childNode": {
@@ -1503,7 +1544,7 @@
 						"valueMax": "",
 						"valueMin": ""
 					},
-					"ECU-INSTANCE-REF":{
+					"ECU-INSTANCE-REF": {
 						"DEST": {
 									"dataType": "ENUM", 
 									"enumeration": [
@@ -1523,11 +1564,186 @@
 								"pattern": "", 
 								"valueMax": "", 
 								"valueMin": ""
-						}
+					}
 				},
 				"shortName": "EcuInstanceRefConditional",
 				"type": "ECU-INSTANCES"
-			}
+			},
+			"RATE-LIMITATION-FILTERS": {
+				"description": "This reference identifies the applicable rate limitation filter for all security events on the related EcuInstance.", 
+				"maxOccurs": "-1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"IDSM-RATE-LIMITATION-REF": {
+						"DEST": {
+									"dataType": "ENUM", 
+									"enumeration": [
+										{
+											"IDSM-RATE-LIMITATION": {}
+										}
+									], 
+									"maxOccurs": "-1", 
+									"minOccurs": "0"
+								},
+								"dataType": "REF", 
+								"defaultValue": "", 
+								"description": "", 
+								"longName": "Idsm Rate Limitation", 
+								"maxLength": "128", 
+								"minLength": "0", 
+								"pattern": "", 
+								"valueMax": "", 
+								"valueMin": ""
+					}
+				},
+				"shortName": "rateLimitationFilter",
+				"type": "RATE-LIMITATION-FILTERS"
+			},
+			"SIGNATURE-SUPPORT-AP": {
+				"description": "The existence of this aggregation specifies that the IdsM shall add a signature to the QSEv messages it sends onto the network.", 
+				"maxOccurs": "-1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"CRYPTO-PRIMITIVE": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This attribute defines the cryptographic algorithm to be used for providing authentication information in QSEv messages.", 
+						"longName": "CryptoPrimitive", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					}
+				},
+				"shortName": "SignatureSupportApRefConditional",
+				"type": "SIGNATURE-SUPPORT-AP"
+			},
+			"SIGNATURE-SUPPORT-CP": {
+				"description": "The existence of this aggregation specifies that the IdsM shall add a signature to the QSEv messages it sends onto the network.", 
+				"maxOccurs": "-1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"CRYPTO-SERVICE-KEY-REFF": {
+						"DEST": {
+									"dataType": "ENUM", 
+									"enumeration": [
+										{
+											"CRYPTO-SERVICE-KEY": {}
+										}
+									], 
+									"maxOccurs": "-1", 
+									"minOccurs": "0"
+								},
+								"dataType": "REF", 
+								"defaultValue": "", 
+								"description": "This reference denotes the cryptographic key to be used by the cryptographic algorithm for providing authentication information in QSEv messages", 
+								"longName": "cryptoServiceKey", 
+								"maxLength": "128", 
+								"minLength": "0", 
+								"pattern": "", 
+								"valueMax": "", 
+								"valueMin": ""
+					},
+					"AUTHENTICATION-REF": {
+						"DEST": {
+									"dataType": "ENUM", 
+									"enumeration": [
+										{
+											"CRYPTO-SERVICE-PRIMITIVE": {}
+										}
+									], 
+									"maxOccurs": "-1", 
+									"minOccurs": "0"
+								},
+								"dataType": "REF", 
+								"defaultValue": "", 
+								"description": "This reference dennotes the cryptographic primitives for providing authentication information in QSEv messages", 
+								"longName": "authentication", 
+								"maxLength": "128", 
+								"minLength": "0", 
+								"pattern": "", 
+								"valueMax": "", 
+								"valueMin": ""
+					}
+				},
+				"shortName": "SignatureSupportCpRefConditional",
+				"type": "SIGNATURE-SUPPORT-CP"
+			},
+			"TRAFFIC-LIMITATION-FILTERS": {
+				"description": "This reference identifies the applicable traffic limitation filter for all security events on the related EcuInstance.", 
+				"maxOccurs": "-1", 
+				"minOccurs": "0", 
+				"parameters": {
+					"SHORT-NAME": {
+						"dataType": "STRING", 
+						"defaultValue": "", 
+						"description": "This specifies an identifying shortName for the object. It needs to be unique within its context and is intended for humans but even more for technical reference.", 
+						"longName": "Short Name", 
+						"maxLength": "128", 
+						"minLength": "0", 
+						"pattern": "[a-zA-Z][a-zA-Z0-9_]*", 
+						"valueMax": "",
+						"valueMin": ""
+					},
+					"IDSM-TRAFFIC-LIMITATION-REF": {
+						"DEST": {
+									"dataType": "ENUM", 
+									"enumeration": [
+										{
+											"IDSM-TRAFFIC-LIMITATION": {}
+										}
+									], 
+									"maxOccurs": "-1", 
+									"minOccurs": "0"
+								},
+								"dataType": "REF", 
+								"defaultValue": "", 
+								"description": "This reference dennotes the cryptographic primitives for providing authentication information in QSEv messages", 
+								"longName": "authentication", 
+								"maxLength": "128", 
+								"minLength": "0", 
+								"pattern": "", 
+								"valueMax": "", 
+								"valueMin": ""
+					},
+				},
+				"shortName": "IdsmTrafficLimitationRefConditional",
+				"type": "TRAFFIC-LIMITATION-FILTERS"
+			},
 		},
 		"shortName": "IdsmInstance",
 		"type": "IDSM-INSTANCE"
